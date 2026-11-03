@@ -1,0 +1,67 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f4e3; /* светлый бежевый фон */
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(232, 127, 88, 0.3); /* мягкая тень в цвет акцента */
+  text-align: center;
+}
+
+.product-name {
+  font-weight: 700;
+  font-size: 28px;
+  color: #000000;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.product-price {
+  color: #e87f58; /* терракотовый цвет */
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: #e87f58;
+  border: none;
+  padding: 14px 28px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(232, 127, 88, 0.4);
+}
+
+button:hover {
+  background-color: #d66f47;
+  box-shadow: 0 6px 14px rgba(214, 111, 71, 0.6);
+}
+
+a {
+  display: inline-block;
+  margin-top: 28px;
+  color: #e87f58;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: text-decoration 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}

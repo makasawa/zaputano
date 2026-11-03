@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Этап 1</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="question-container">
+        <h1>Кто умолчал о своей связи?</h1>
+        
+        <form id="quiz-form">
+            <div class="options">
+                <div class="option">
+                    <input type="checkbox" id="option1" name="answer" value="1" />
+                    <label for="option1">Екатерина Белова — Владимир Воронов</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option2" name="answer" value="2" />
+                    <label for="option2">Андрей Захаров — Ирина Крименчук</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option3" name="answer" value="3" />
+                    <label for="option3">Ольга Семенова — Игорь Петров</label>
+                </div>
+                <div class="option"> 
+                    <input type="checkbox" id="option4" name="answer" value="4" />
+                    <label for="option4">Екатерина Белова — Ольга Семенова</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option5" name="answer" value="5" />
+                    <label for="option5">Андрей Захаров — Ольга Семенова</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option6" name="answer" value="6" />
+                    <label for="option6">Владимир Воронов — Дмитрий Козлов</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option7" name="answer" value="7" />
+                    <label for="option7">Екатерина Белова — Игорь Петров</label>
+                </div>
+                <div class="option"> 
+                    <input type="checkbox" id="option8" name="answer" value="8" />
+                    <label for="option8">Дмитрий Козлов — Ирина Крименчук</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option9" name="answer" value="9" />
+                    <label for="option9">Андрей Захаров — Екатерина Белова</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option10" name="answer" value="10" />
+                    <label for="option10">Ольга Семенова — Владимир Воронов</label>
+                </div>
+            </div>
+
+            <p><em>*Отметьте один или несколько вариантов</em></p>
+
+            <div class="divider"></div>
+
+            <div class="buttons-container">
+            <a href="hint4.html" class="hint-link">Посмотреть подсказку</a>
+            <a href="massege.html" class="submit-btn1">←</a>
+            <button type="submit" class="submit-btn">Отправить</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Правильные ответы (пример: 1, 2, 3)
+            const correctAnswers = ['3','9'];
+            const selectedOptions = Array.from(document.querySelectorAll('input[name="answer"]:checked'))
+                                      .map(el => el.value);
+
+            const allCorrect = correctAnswers.every(val => selectedOptions.includes(val)) &&
+                              selectedOptions.length === correctAnswers.length;
+
+            if (allCorrect) {
+                window.location.href = 'success4.html';
+            } else {
+                alert('Неправильно! Попробуйте ещё раз.');
+            }
+        });
+    </script>
+</body>
+</html>

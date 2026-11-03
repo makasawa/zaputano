@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Этап 1</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="question-container">
+        <h1>КРКРКРКРКРКР</h1>
+        
+        <form id="quiz-form">
+            <div class="options">
+                <div class="option">
+                    <input type="checkbox" id="option1" name="answer" value="1" />
+                    <label for="option1">Показания свидетеля Захарова А.Н.</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option2" name="answer" value="2" />
+                    <label for="option2">Стенограмма допроса подозреваемого Воронова А.Д.</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option3" name="answer" value="3" />
+                    <label for="option3">Стенограмма опроса свидетеля Беловой Е.Ю.</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option4" name="answer" value="4" />
+                    <label for="option4">Стенограмма опроса свидетеля Семенова О.Г.</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option5" name="answer" value="5" />
+                    <label for="option5">Фото отпечатков с места преступления</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option6" name="answer" value="6" />
+                    <label for="option6">Журнал записи движения ключей (стр.86)</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option7" name="answer" value="7" />
+                    <label for="option7">Снимки квартиры Воронова А.Д.</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option8" name="answer" value="8" />
+                    <label for="option8">Карта г. Пелинск</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option9" name="answer" value="9" />
+                    <label for="option9">Показания свидетеля Петрова И.П.</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option10" name="answer" value="10" />
+                    <label for="option10">Стенограмма опроса свидетеля Воронова В.Д.</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option11" name="answer" value="11" />
+                    <label for="option11">Стенограмма опроса свидетеля Козлова Д.Е.</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option12" name="answer" value="12" />
+                    <label for="option12">Дактилоскопическая карта Воронова А.Д.</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option13" name="answer" value="13" />
+                    <label for="option13">Фото из бара</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option14" name="answer" value="14" />
+                    <label for="option14">Газетная статья о картине «Тишина заката»</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="option15" name="answer" value="15" />
+                    <label for="option15">Выписка по счету Воронова А.Д.</label>
+                </div>
+            </div>
+
+            <p><em>*Отметьте один или несколько вариантов</em></p>
+
+            <div class="divider"></div>
+
+            <div class="buttons-container">
+            <a href="hint5.html" class="hint-link">Посмотреть подсказку</a>
+            <a href="question4.html" class="submit-btn1">←</a>
+            <button type="submit" class="submit-btn">Отправить</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Правильные ответы (пример: 1, 2, 3)
+            const correctAnswers = ['1', '2', '3'];
+            const selectedOptions = Array.from(document.querySelectorAll('input[name="answer"]:checked'))
+                                      .map(el => el.value);
+
+            const allCorrect = correctAnswers.every(val => selectedOptions.includes(val)) &&
+                              selectedOptions.length === correctAnswers.length;
+
+            if (allCorrect) {
+                window.location.href = 'success5.html';
+            } else {
+                alert('Неправильно! Попробуйте ещё раз.');
+            }
+        });
+    </script>
+</body>
+</html>

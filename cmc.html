@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>СМС-сообщения</title>
+  <link rel="stylesheet" href="stylemassege.css" />
+</head>
+<body>
+  <main class="container">
+    <h1 class="up">СМС-сообщения</h1>
+
+    <div class="btn-container">
+      <button class="sms-btn" data-user="Захаров">Посмотреть сообщения Захарова</button>
+      <div class="sms-window" id="Захаров"></div>
+
+      <button class="sms-btn" data-user="Семенова">Посмотреть сообщения Семенова</button>
+      <div class="sms-window" id="Семенова"></div>
+
+      <button class="sms-btn" data-user="Белова">Посмотреть сообщения Белова</button>
+      <div class="sms-window" id="Белова"></div>
+
+      <button class="sms-btn" data-user="Петров">Посмотреть сообщения Петрова</button>
+      <div class="sms-window" id="Петров"></div>
+    </div>
+    <div class="buttons-container1">
+        <a href="question4.html" class="submit-btn1">Назад</a>
+        <a href="question5.html" class="submit-btn">Далее</a>
+    </div>
+  </main>
+
+  <script>
+    const messagesData = {
+      Захаров: [
+        {
+time: '15:24',
+sender: 'VerID',
+text: 'Код подтверждения: 81204.\nНе сообщайте его никому.'
+},
+{
+time: '14:34',
+sender: 'FIXOptima',
+text: 'Купите на 1000 ₽ - получите плед в подарок! Акция действует до 15 апреля. Торопитесь!'
+},
+{
+time: '12:20',
+sender: 'Фёдор (друг)',
+text: 'Андрей Николаевич, баня в пятницу на 18:00. Вы с нами?'
+},
+{
+time: '11:23',
+sender: 'Zaschitnik',
+text: 'Ваше спокойствие под присмотром Защитника....'
+},
+{
+time: '08:21',
+sender: 'ЭлектроМир',
+text: 'Скидки до -25% на технику. Акция до конца недели!'
+},
+{
+time: 'Вчера',
+sender: 'Parkovka Pelinsk',
+text: 'Парковка на ул. Чайковского, д.7, 15/03/2025 23:10 - 16/03/2025 00:40 оплачена.'
+},
+{
+time: 'Вчера',
+sender: 'Анечка (внучка)',
+text: 'Дедуль, позвони когда будешь свободен,\nхочу посоветоваться'
+},
+{
+time: 'Вчера',
+sender: 'СветКонтроль',
+text: 'Передайте показания счетчиков до 10.04 включительно. Спасибо!'
+},
+{
+time: 'Вчера',
+sender: 'COZYHOME.RU',
+text: 'Только для вас -30% в корзине от 6000 ₽ до 12.05 на cozyhome.ru/lb'
+},
+{
+time: 'Вчера',
+sender: 'ДачаМаркет',
+text: 'Скидки на рассаду и семена только до'
+}
+      ],
+      Семенова: [
+{
+time: '09:35',
+sender: 'PlayMusic',
+text: 'Ваш подписка активна до 20.06.2025.\nОплата: 349 ₽'
+},
+{
+time: 'Вчера',
+sender: 'MoodCinema',
+text: '2 билета в корзине! Забронируйте до 18:00, иначе сгорят ?'
+},
+{
+time: 'Вчера',
+sender: 'GlanceFit',
+text: 'Ты молодец! Твоя активность за день 7428 шагов!'
+},
+{
+time: 'Вчера',
+sender: 'LearnUp',
+text: 'Напоминание: вебинар «Карьерный рост в HoReCa» начнётся в 20:00'
+},
+{
+time: '17.03.2025',
+sender: 'DressMe',
+text: 'Мы сохранили для вас платье! Успейте забрать до 17:00'
+},
+{
+time: '17.03.2025',
+sender: 'Мама',
+text: 'Зайка, ты как? У нас все хорошо. Жду\nтвоего звонка'
+},
+{
+time: '16.03.2025',
+sender: 'NuSkynLab',
+text: 'Ольга, вам -20% на пилинги до 11 мая. Код: SKINLOVE'
+},
+{
+time: '16.03.2025',
+sender: 'Защита24',
+text: '\nСистема безопасности ресторана отключена в 00:21. Для активации наберите *32653#'
+},
+{
+time: '15.03.2025',
+sender: 'LoveCraft',
+text: 'Ваш заказ отправлен! Трек-номер:\nLVZ-223410'
+},
+{
+time: '15.03.2025',
+sender: 'VeriPay',
+text: 'Код подтверждения: 52739.'
+}
+      ],
+      Белова: [
+        {
+time: '19.03.2025',
+sender: 'DeliveryPro',
+text: 'Курьер Дмитрий уже едет. Заказ #111203, ориентировочное время: 14:30-15:00'
+},
+{
+time: '19.03.2025',
+sender: 'ShopMood',
+text: 'Последний день! -20% на всё — даже на НОВИНКИ!'
+},
+{
+time: '18.03.2025',
+sender: 'TravelGEO',
+text: 'Греция, Крит — 7 ночей от 78 000 ₽ на двоих.. Вылет уже 20.03!'
+},
+{
+time: '14.03.2025',
+sender: 'VerlD',
+text: 'Код подтверждения: 81204.\nНе сообщайте его никому.'
+},
+{
+time: '13.03.2025',
+sender: '+7 (976) 115-47-90',
+text: 'Катя, привет! Не смог дозвониться.\nСкоро буду у тебя, жди)'
+},
+{
+time: '08.03.2025',
+sender: 'Zakaz-Info',
+text: 'С 8 Марта! Пора побаловать себя!\nСкидка -65% код «МАРТ15»'
+},
+{
+time: '06.03.2025',
+sender: 'Simple',
+text: 'Только 3 дня скидки до -50% на оригинальные подарки к 8 марта —...'
+},
+{
+time: '29.01.2025',
+sender: 'VitaLab',
+text: 'Екатерина, анализы готовы. Войдите в\nЛК для просмотра'
+},
+{
+time: '26.12.2024',
+sender: 'Вероника',
+text: 'Катюш, загляни вечером в Zoom, будем обсуждать ретрит'
+}
+      ],
+      Петров: [
+        {
+time: '09:35',
+sender: 'ТехноБыт',
+text: 'Чайники со скидкой до 40%! ТЦ «Горизонт», пав. 14'
+},
+{
+time: 'Вчера',
+sender: 'Транспорт-М',
+text: 'Пополнение карты: 300 ₽. Остаток: 487.23 ₽'
+},
+{
+time: 'Вчера',
+sender: '+7 (943) 117-29-36',
+text: 'Привет! Да, конечно помню, как будет время - обязательно проверю'
+},
+{
+time: 'Вчера',
+sender: 'БумбетСпорт',
+text: 'Ставка 500 ₽: «Зенит - Спартак». Коэф: 2.05. Удачи!'
+},
+{
+time: '17 марта /14:30',
+sender: 'Брат Олег',
+text: 'Как смена? У нас тут дождь, сидим дома.'
+},
+{
+time: '16 марта / 18:12',
+sender: 'Столовая Nº5',
+text: 'Бизнес-ланч с компотом — 180 ₽. Завтра борщ, котлета и ягодный компот!'
+},
+{
+time: '16 марта /14:24',
+sender: 'ЖЭК-7',
+text: 'Платёжка за май: 3 670 ₽. Передайте показания до 28.03.'
+},
+{
+time: '16 марта / 00:26',
+sender: '+7 (976) 251-16-24',
+text: 'Готово.'
+},
+{
+time: '15 марта / 19:28',
+sender: 'ЗаймПлюс',
+text: 'Ваш платёж 890 ₽. Дата оплаты: 18 марта. Не пропустите'
+},
+{
+time: '15 марта / 08:19',
+sender: 'Галя (знакомая)',
+text: 'Будешь на смене в субботу? зайду за'
+}
+      ]
+    };
+
+    const buttons = document.querySelectorAll('.sms-btn');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const user = btn.dataset.user;
+        const windowDiv = document.getElementById(user);
+
+        // Если окно уже открыто - закрыть его
+        if (windowDiv.classList.contains('open')) {
+          windowDiv.classList.remove('open');
+          windowDiv.innerHTML = '';
+          return;
+        }
+
+        // Закрыть все окна и очистить
+        document.querySelectorAll('.sms-window.open').forEach(w => {
+          w.classList.remove('open');
+          w.innerHTML = '';
+        });
+
+        // Создать содержимое переписки
+        const messages = messagesData[user] || [];
+        const title = ``;
+        const msgsHtml = messages.map(msg => `
+          <div class="message">
+            <div class="msg-header">
+              <span class="sender">${msg.sender}</span>
+              <span class="time">${msg.time}</span>
+            </div>
+            <div class="msg-text">${msg.text}</div>
+          </div>
+        `).join('');
+
+        windowDiv.innerHTML = title + msgsHtml;
+        windowDiv.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
